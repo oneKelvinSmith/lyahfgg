@@ -10,4 +10,11 @@ doubleSmallNumber' x = (if x > 100 then x else x * 2) + 1
 
 conanO'Brien = "It's a-me, Conan O'Brien!"
 
-boomBangs xs = [if x < 10 then "BOOM!" else "BANG!" | x <- xs, odd x]
+boomBangs items =
+  [if item < 10 then "BOOM!" else "BANG!" |
+   item <- items, odd item]
+
+length' items = sum [1 | _ <- items]
+
+removeNonUppercase string =
+  [character | character <- string, character `elem` ['A'..'Z']]
